@@ -32,7 +32,7 @@ public class SolverController {
 			rep = this.solvecaptchaV3(anchor);
 		}
 		else {
-			rep = "Bad captcha or not a V3";
+			rep = "Bad captcha or not a V3 or missing";
 		}
 			
 		return rep;
@@ -94,8 +94,6 @@ public class SolverController {
 			
 			//Fermer la connexion
 			this.uneConnexion.disconnect();
-	        
-	        System.out.println(this.content.toString());
 	        
 	        if (this.content.toString().contains("[\"rresp\",null")) {
 	        	rep = "ERROR CAPTCHA";
